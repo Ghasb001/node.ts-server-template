@@ -1,11 +1,10 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import axios from 'axios';
-import { connectToDatabase, collections } from './mongo';
-import Leaders from "./models/leaders";
-import TipsAndTricks from "./models/tipsTricks";
-import Resources from "./models/resources";
-import UsageAPI from "./models/usage";
+import { connectToDatabase, collections } from './mongo/mongo';
+import Leaders from "./mongo/models/leaders";
+import TipsAndTricks from "./mongo/models/tipsTricks";
+import Resources from "./mongo/models/resources";
 dotenv.config();
 
 const app: Express = express();

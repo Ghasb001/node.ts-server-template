@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/The-Frying-Pans/pots-backend/issues"
   },
-  "homepage": "https://github.com/The-Frying-Pans/pots-backend#readme",
+  "homepage": "https://github.com/Ghasb001/node.ts-server-template/blob/main/README.md",
   "dependencies": {
     "@types/node": "^20.3.2",
     "@types/pg": "^8.10.2",
