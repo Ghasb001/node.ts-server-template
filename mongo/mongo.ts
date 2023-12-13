@@ -4,7 +4,8 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export const collections: {
-  collectionKeyName?: mongoDB.Collection
+  // name after your model
+  example?: mongoDB.Collection
 } = {}
 
 const client: mongoDB.MongoClient = new mongoDB.MongoClient(process.env.string, { useUnifiedTopology: true });
@@ -15,9 +16,9 @@ export async function connectToDatabase() {
   // create the database const
   const db: mongoDB.Db = client.db(process.env.database);
   // name the collections here
-  const data: mongoDB.Collection = db.collection('yourCollection');
+  const data: mongoDB.Collection = db.collection('example');
   // define the export collections
-  collections.collectionKeyName = data;
+  collections.example = data;
   // log sucessful connections
   console.log(`Successfully connected to database: ${db.databaseName}`);
 }

@@ -4,6 +4,8 @@ import axios from 'axios';
 // DBMS connection imports
 import Pool from './postgres/db';
 import { connectToDatabase, collections } from './mongo/mongo';
+// mongo models
+import Example from './mongo/models/example';
 
 dotenv.config();
 
@@ -25,15 +27,14 @@ app.get('/pgExample', async (req: Request, res: Response) => {
   .catch((err: any) => res.sendStatus(500))
 })
 
-// app.get('/mongoExample', async (req: Request, res: Response) => {
-//   try {
-//     const leads = (await collections.leaders.find({}).toArray()) as Leaders[];
-//     leads.sort((a, b) => a.priority - b.priority)
-//     res.status(200).send(leads);
-//   } catch (error) {
-//     res.status(500).send(error.message);
-//   }
-// });
+app.get('/mongoExample', async (req: Request, res: Response) => {
+  try {
+    const info = (await collections.example.find({}).toArray()) as Example[];
+    res.status(200).send(info);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
 
 
 
